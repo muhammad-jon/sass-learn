@@ -1,0 +1,31 @@
+// _mixins.scss
+
+@mixin media-xl {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media screen and (max-width: 760px) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin media-xs {
+  @media screen and (max-width: 300px) {
+    @content;
+  }
+}

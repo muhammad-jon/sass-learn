@@ -1,0 +1,300 @@
+@use "./styles/colors";
+@use "sass:color";
+@use "sass:math";
+@use "./styles/media";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+$primary-color: #336699;
+$secondary-color: #993366;
+
+// .heading {
+//   font-size: 24px;
+//   color: $primary-color;
+// }
+
+.message {
+  font-size: 16px;
+  color: $secondary-color;
+}
+
+$width: 300px;
+
+.element {
+  background-color: $primary-color;
+  color: $secondary-color;
+  width: $width - 100px; // Natija: 900px
+}
+
+.container {
+  width: 100%;
+  .heading {
+    font-size: 24px;
+    color: red;
+  }
+
+  .content {
+    font-size: 16px;
+    color: #666;
+  }
+}
+
+.container {
+  width: 100%;
+
+  h1 {
+    font-size: 24px;
+    color: orange;
+  }
+
+  p {
+    font-size: 16px;
+    color: #666;
+  }
+}
+
+@mixin border-radius($radius: 10px, $bg, $color: white) {
+  border-radius: $radius;
+  background-color: $bg;
+  color: $color;
+  padding: 10px 20px;
+}
+
+.button {
+  @include border-radius(5px, #336699, white);
+}
+
+.button-success {
+  @include border-radius(5px, green);
+}
+
+.button-primary {
+  @include border-radius(5px, gray, black);
+}
+.button-warning {
+  @include border-radius(5px, red, white);
+}
+
+.button-secondary {
+  @include border-radius(5px, blue, white);
+}
+
+// ////////////////////////////////////////////////////////////////////////
+
+%button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #336699;
+  color: #fff;
+}
+
+.primary-button {
+  @extend %button;
+  font-size: 16px;
+}
+
+.secondary-button {
+  @extend %button;
+  background-color: #993366;
+}
+
+$x: 2px;
+$y: 2px;
+$blur: 5px;
+$color: #999;
+
+%box-shadow {
+  box-shadow: $x $y $blur $color;
+}
+
+.box {
+  @extend %box-shadow;
+}
+
+/////////////////////////////////////////////////////////////
+///
+///
+$width: 100px;
+.grand {
+  width: $width * 2; // Natija: 200px
+  height: $width + 50px; // Natija: 150px
+  //   margin-left: math.div($width / 2); // Natija: 50px
+  border: 2px solid red;
+}
+
+$base-font-size: 16px;
+.grand {
+  color: #336699;
+  font-size: percentage(1.6); // 1600%
+
+  &:hover {
+    color: darken(#336699, 20%); // 10% rangni qoraydi
+  }
+}
+
+.card {
+  font: {
+    family: sans-serif;
+    size: 48px;
+    weight: 600;
+  }
+}
+
+.box {
+  transition: {
+    property: all;
+    duration: 1s;
+    delay: 2s;
+  }
+}
+
+.content {
+  padding: auto {
+    top: 10px;
+    bottom: 20px;
+  }
+}
+
+$img-base-path: "https://storage.kun.uz/source/9/";
+
+$image1: "zWILbWabrQJzuxgfoxJLKewIvPbxxhEj.jpg";
+$image2: "0s3GGFAOrRurOxuARzsJXCCX0Hf_k8IL.jpg";
+
+.bunny {
+  width: 300px;
+  height: 200px;
+  background: url($img-base-path + $image2);
+  background-size: cover;
+}
+
+ul > {
+  li {
+    list-style-type: none;
+  }
+  a {
+    color: colors.$text-color;
+  }
+}
+
+h2 {
+  + p {
+    border-top: 1px solid gray;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
+
+p {
+  ~ {
+    span {
+      opacity: 0.8;
+    }
+    button {
+      padding: 20px;
+    }
+  }
+  p {
+    color: green;
+  }
+}
+
+.card {
+  max-width: 200px;
+
+  &__body {
+    background-color: red;
+  }
+  &__header {
+    background-color: orange;
+  }
+  &__footer {
+    background-color: green;
+  }
+}
+
+// @debug 15rem + 45; // 60px
+// @debug 45px - 13;
+// @debug 30px * 2;
+@debug math.div(45pc, 3);
+// @debug 45px / 3;
+
+$font-weight: (
+  "light": 100,
+  "regular": 400,
+  "bold": 700,
+  "extra-bold": 900,
+);
+
+$buttons: (
+  "success": green,
+  "danger": red,
+  "warning": orange,
+  "secondary": gray,
+);
+
+@each $key, $value in $buttons {
+  .button-#{$key} {
+    display: inline-block;
+    background-color: $value;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+  }
+}
+
+//         nomi   argument  argument
+
+.con {
+  padding: colors.ayirish(30px, 5px) colors.ayirish(40px, 25px);
+  border: 10px solid red;
+  background-color: colors.$bg-color;
+}
+
+@mixin theme-colors($light-theme: true) {
+  @if $light-theme {
+    background-color: colors.$light-background;
+    color: colors.$light-text;
+  } @else {
+    background-color: colors.$dark-background;
+    color: colors.$dark-text;
+  }
+}
+
+.banner {
+  @include theme-colors($light-theme: true);
+  body.dark & {
+    @include theme-colors($light-theme: false);
+  }
+}
+
+body {
+  @include media.media-xl {
+    .foo {
+      background-color: #993366;
+    }
+    .banner {
+      background-color: #993366;
+    }
+  }
+  @include media.media-lg {
+    .foo {
+      background-color: green;
+    }
+    .banner {
+      background-color: green;
+    }
+  }
+  @include media.media-md {
+    .foo {
+      background-color: violet;
+    }
+    .banner {
+      background-color: violet;
+    }
+  }
+}

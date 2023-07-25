@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.message {
+  font-size: 16px;
+  color: #993366;
+}
+
+.element {
+  background-color: #336699;
+  color: #993366;
+  width: 200px;
+}
+
+.container {
+  width: 100%;
+}
+.container .heading {
+  font-size: 24px;
+  color: red;
+}
+.container .content {
+  font-size: 16px;
+  color: #666;
+}
+
+.container {
+  width: 100%;
+}
+.container h1 {
+  font-size: 24px;
+  color: orange;
+}
+.container p {
+  font-size: 16px;
+  color: #666;
+}
+
+.button {
+  border-radius: 5px;
+  background-color: #336699;
+  color: white;
+  padding: 10px 20px;
+}
+
+.button-success {
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+}
+
+.button-primary {
+  border-radius: 5px;
+  background-color: gray;
+  color: black;
+  padding: 10px 20px;
+}
+
+.button-warning {
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+}
+
+.button-secondary {
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+}
+
+.secondary-button, .primary-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #336699;
+  color: #fff;
+}
+
+.primary-button {
+  font-size: 16px;
+}
+
+.secondary-button {
+  background-color: #993366;
+}
+
+.box {
+  box-shadow: 2px 2px 5px #999;
+}
+
+.grand {
+  width: 200px;
+  height: 150px;
+  border: 2px solid red;
+}
+
+.grand {
+  color: #336699;
+  font-size: 160%;
+}
+.grand:hover {
+  color: #1a334d;
+}
+
+.card {
+  font-family: sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.box {
+  transition-property: all;
+  transition-duration: 1s;
+  transition-delay: 2s;
+}
+
+.content {
+  padding: auto;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.bunny {
+  width: 300px;
+  height: 200px;
+  background: url("https://storage.kun.uz/source/9/0s3GGFAOrRurOxuARzsJXCCX0Hf_k8IL.jpg");
+  background-size: cover;
+}
+
+ul > li {
+  list-style-type: none;
+}
+ul > a {
+  color: gray;
+}
+
+h2 + p {
+  border-top: 1px solid gray;
+}
+h2 h1 {
+  font-size: 24px;
+}
+
+p ~ span {
+  opacity: 0.8;
+}
+p ~ button {
+  padding: 20px;
+}
+p p {
+  color: green;
+}
+
+.card {
+  max-width: 200px;
+}
+.card__body {
+  background-color: red;
+}
+.card__header {
+  background-color: orange;
+}
+.card__footer {
+  background-color: green;
+}
+
+.button-success {
+  display: inline-block;
+  background-color: green;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+.button-danger {
+  display: inline-block;
+  background-color: red;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+.button-warning {
+  display: inline-block;
+  background-color: orange;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+.button-secondary {
+  display: inline-block;
+  background-color: gray;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+.con {
+  padding: 25px 15px;
+  border: 10px solid red;
+  background-color: orange;
+}
+
+.banner {
+  background-color: #f2ece4;
+  color: #036;
+}
+body.dark .banner {
+  background-color: #6b717f;
+  color: #d2e1dd;
+}
+
+@media screen and (max-width: 1440px) {
+  body .foo {
+    background-color: #993366;
+  }
+  body .banner {
+    background-color: #993366;
+  }
+}
+@media screen and (max-width: 1200px) {
+  body .foo {
+    background-color: green;
+  }
+  body .banner {
+    background-color: green;
+  }
+}
+@media screen and (max-width: 760px) {
+  body .foo {
+    background-color: violet;
+  }
+  body .banner {
+    background-color: violet;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
