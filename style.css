@@ -242,4 +242,30 @@ body.dark .banner {
   }
 }
 
+#menu-switch {
+  display: none;
+}
+
+nav label {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  nav label {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+  #menu-switch:checked + ul {
+    display: block;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    margin-top: 4rem;
+    height: 100vh;
+    background-color: white;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
